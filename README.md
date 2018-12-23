@@ -1,4 +1,4 @@
-# TrackerALTTPR
+# Tracker Randomizer
 
 This project is a personal exercise.
 
