@@ -1,0 +1,17 @@
+<ng-container *ngIf="config">
+  <activable-tile
+    class="tile"
+    [item]="config.getItem(Item.Bow)"></activable-tile>
+  <activable-tile
+    class="tile"
+    [item]="config.getItem(Item.BlueBoomerang)"></activable-tile>
+  <select-tile
+    class="tile"
+    [item]="config.getItem(Item.Sword)"></select-tile>
+  <dungeon-tile
+    class="tile"
+    [item]="config.getItem(Dungeon.EasternPalace)"></dungeon-tile>
+  <dungeon-tile
+    class="tile"
+    [item]="config.getItem(Dungeon.MiseryMire)"></dungeon-tile>
+</ng-container>

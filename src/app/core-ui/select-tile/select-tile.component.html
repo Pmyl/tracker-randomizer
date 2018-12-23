@@ -1,0 +1,5 @@
+<div class="imageContainer" (click)="next()" (contextmenu)="previous(); $event.preventDefault()">
+    <ng-container *ngIf="state$ | async; let state">
+        <img [ngClass]="{ 'notFound': !isFound(state) }" [src]="images[state]">
+    </ng-container>
+</div>

@@ -1,0 +1,32 @@
+{
+    "tiles": [
+        {
+            "type": "Select",
+            "id": "Item_Sword",
+            "states": [
+                "SwordState_NotFound",
+                "SwordState_Hero",
+                "SwordState_Master",
+                "SwordState_Tempered",
+                "SwordState_Gold"
+            ]
+        },
+        {
+            "type": "Activable",
+            "id": "Item_Bow"
+        },
+        {
+            "type": "Activable",
+            "id": "Item_BlueBoomerang"
+        },
+        {
+            "type": "Dungeon",
+            "id": "Dungeon_EasternPalace"
+        },
+        {
+            "type": "Dungeon",
+            "id": "Dungeon_MiseryMire",
+            "blocked": true
+        }
+    ]
+}

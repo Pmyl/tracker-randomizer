@@ -1,0 +1,3 @@
+<div class="imageContainer" (click)="item.toggle()" (contextmenu)="item.toggle(); $event.preventDefault()">
+    <img [ngClass]="{ 'notFound': !(state$ | async) }" [src]="image">
+</div>

@@ -1,0 +1,10 @@
+{
+    "select": [
+        "Dungeon_EasternPalace_Reward",
+        "Dungeon_MiseryMire_Reward",
+        "Dungeon_MiseryMire_EntranceNeededItem"
+    ],
+    "activable": [
+        "Dungeon_EasternPalace"
+    ]
+}

@@ -1,0 +1,20 @@
+{
+  "SwordState_NotFound": "../assets/images/sword.png",
+  "SwordState_Hero": "../assets/images/sword.png",
+  "SwordState_Master": "../assets/images/MasterSword.png",
+  "SwordState_Tempered": "../assets/images/TemperedSword.png",
+  "SwordState_Gold": "../assets/images/GoldenSword.png",
+  "DungeonReward_?": "../assets/images/reward_unknown.png",
+  "DungeonReward_Pendant": "../assets/images/pendant.png",
+  "DungeonReward_GreenPendant": "../assets/images/green_pendant.png",
+  "DungeonReward_Crystal": "../assets/images/crystal.png",
+  "DungeonReward_RedCrystal": "../assets/images/red_crystal.png",
+  "DungeonEntranceItem_?": "../assets/images/reward_unknown.png",
+  "DungeonEntranceItem_Bombos": "../assets/images/bombos.png",
+  "DungeonEntranceItem_Ether": "../assets/images/ether.png",
+  "DungeonEntranceItem_Quake": "../assets/images/quake.png",
+  "Item_BlueBoomerang": "../assets/images/blue_boomerang.png",
+  "Item_Bow": "../assets/images/bow.png",
+  "Dungeon_MiseryMire": "../assets/images/misery_mire.png",
+  "Dungeon_EasternPalace": "../assets/images/eastern_palace.png"
+}
