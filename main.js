@@ -49,6 +49,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _singleplayer_singleplayer_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./singleplayer/singleplayer.component */ "./src/app/alttpr-ui/singleplayer/singleplayer.component.ts");
 /* harmony import */ var _multiplayer_service_multiplayer__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./multiplayer/service/multiplayer */ "./src/app/alttpr-ui/multiplayer/service/multiplayer.ts");
 /* harmony import */ var _multiplayer_service_json_multiplayer__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./multiplayer/service/json-multiplayer */ "./src/app/alttpr-ui/multiplayer/service/json-multiplayer.ts");
+/* harmony import */ var _core_ui_layout_fetcher_layout_fetcher__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../core-ui/layout/fetcher/layout-fetcher */ "./src/app/core-ui/layout/fetcher/layout-fetcher.ts");
+/* harmony import */ var _core_ui_layout_fetcher_json_layout__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../core-ui/layout/fetcher/json-layout */ "./src/app/core-ui/layout/fetcher/json-layout.ts");
+/* harmony import */ var _timer_timer_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./timer/timer.component */ "./src/app/alttpr-ui/timer/timer.component.ts");
+
+
+
 
 
 
@@ -71,12 +77,12 @@ var AlttprUiModule = /** @class */ (function () {
     }
     AlttprUiModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-            declarations: [_dungeon_tile_dungeon_tile_component__WEBPACK_IMPORTED_MODULE_3__["DungeonTileComponent"], _standard_standard_component__WEBPACK_IMPORTED_MODULE_4__["StandardComponent"], _multiplayer_multiplayer_component__WEBPACK_IMPORTED_MODULE_12__["MultiplayerComponent"], _singleplayer_singleplayer_component__WEBPACK_IMPORTED_MODULE_13__["SingleplayerComponent"]],
+            declarations: [_timer_timer_component__WEBPACK_IMPORTED_MODULE_18__["TimerComponent"], _dungeon_tile_dungeon_tile_component__WEBPACK_IMPORTED_MODULE_3__["DungeonTileComponent"], _standard_standard_component__WEBPACK_IMPORTED_MODULE_4__["StandardComponent"], _multiplayer_multiplayer_component__WEBPACK_IMPORTED_MODULE_12__["MultiplayerComponent"], _singleplayer_singleplayer_component__WEBPACK_IMPORTED_MODULE_13__["SingleplayerComponent"]],
             imports: [
                 _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
                 _core_ui_core_ui_module__WEBPACK_IMPORTED_MODULE_5__["CoreUiModule"]
             ],
-            exports: [_dungeon_tile_dungeon_tile_component__WEBPACK_IMPORTED_MODULE_3__["DungeonTileComponent"], _singleplayer_singleplayer_component__WEBPACK_IMPORTED_MODULE_13__["SingleplayerComponent"], _multiplayer_multiplayer_component__WEBPACK_IMPORTED_MODULE_12__["MultiplayerComponent"]],
+            exports: [_timer_timer_component__WEBPACK_IMPORTED_MODULE_18__["TimerComponent"], _dungeon_tile_dungeon_tile_component__WEBPACK_IMPORTED_MODULE_3__["DungeonTileComponent"], _singleplayer_singleplayer_component__WEBPACK_IMPORTED_MODULE_13__["SingleplayerComponent"], _multiplayer_multiplayer_component__WEBPACK_IMPORTED_MODULE_12__["MultiplayerComponent"]],
             providers: [
                 {
                     provide: _configuration_base_configuration_fetcher__WEBPACK_IMPORTED_MODULE_6__["IConfigurationFetcher"],
@@ -84,6 +90,12 @@ var AlttprUiModule = /** @class */ (function () {
                         var fetcher = new _configuration_json_configuration_json_fetcher__WEBPACK_IMPORTED_MODULE_7__["ConfigurationJsonFetcher"]('./assets/configuration/example.json');
                         fetcher.addParser(new _alttpr_tiles_dungeon_tile_parser__WEBPACK_IMPORTED_MODULE_8__["DungeonTileParser"]());
                         return fetcher;
+                    }
+                },
+                {
+                    provide: _core_ui_layout_fetcher_layout_fetcher__WEBPACK_IMPORTED_MODULE_16__["ILayoutFetcher"],
+                    useFactory: function () {
+                        return new _core_ui_layout_fetcher_json_layout__WEBPACK_IMPORTED_MODULE_17__["JsonLayoutFetcher"]('./assets/configuration/example.layout.json');
                     }
                 },
                 {
@@ -117,7 +129,7 @@ var AlttprUiModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"imageContainer\">\n    <activable-tile\n      class=\"dungeon\"\n      [item]=\"item\"></activable-tile>\n    <select-tile\n      class=\"reward\"\n      [item]=\"item.reward\"></select-tile>\n    <select-tile\n      *ngIf=\"item.block\"\n      class=\"block\"\n      [item]=\"item.block\"></select-tile>\n</div>"
+module.exports = "<div class=\"imageContainer\">\r\n  <activable-tile\r\n    class=\"dungeon\"\r\n    [item]=\"item\"></activable-tile>\r\n  <select-tile\r\n    class=\"reward\"\r\n    [item]=\"item.reward\"></select-tile>\r\n  <select-tile\r\n    *ngIf=\"item.block\"\r\n    class=\"block\"\r\n    [item]=\"item.block\"></select-tile>\r\n</div>"
 
 /***/ }),
 
@@ -128,7 +140,7 @@ module.exports = "<div class=\"imageContainer\">\n    <activable-tile\n      cla
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".imageContainer {\n  width: 100%;\n  height: 100%;\n  text-align: center;\n  position: relative; }\n  .imageContainer .notFound,\n  .imageContainer .unknown {\n    -webkit-filter: grayscale(100%);\n            filter: grayscale(100%); }\n  .imageContainer .reward {\n    z-index: 10;\n    position: absolute;\n    bottom: 0;\n    right: 0;\n    width: 16px;\n    height: 16px; }\n  .imageContainer .block {\n    z-index: 10;\n    position: absolute;\n    top: 0;\n    right: 0;\n    width: 16px;\n    height: 16px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYWx0dHByLXVpL2R1bmdlb24tdGlsZS9EOlxcUHJvamVjdHNcXFRyYWNrZXJBTFRUUFIvc3JjXFxhcHBcXGFsdHRwci11aVxcZHVuZ2Vvbi10aWxlXFxkdW5nZW9uLXRpbGUuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxZQUFXO0VBQ1gsYUFBWTtFQUNaLG1CQUFrQjtFQUNsQixtQkFBa0IsRUF3QnJCO0VBNUJEOztJQVFRLGdDQUF1QjtZQUF2Qix3QkFBdUIsRUFDMUI7RUFUTDtJQVlRLFlBQVc7SUFDWCxtQkFBa0I7SUFDbEIsVUFBUztJQUNULFNBQVE7SUFDUixZQUFXO0lBQ1gsYUFBWSxFQUNmO0VBbEJMO0lBcUJRLFlBQVc7SUFDWCxtQkFBa0I7SUFDbEIsT0FBTTtJQUNOLFNBQVE7SUFDUixZQUFXO0lBQ1gsYUFBWSxFQUNmIiwiZmlsZSI6InNyYy9hcHAvYWx0dHByLXVpL2R1bmdlb24tdGlsZS9kdW5nZW9uLXRpbGUuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuaW1hZ2VDb250YWluZXIge1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBoZWlnaHQ6IDEwMCU7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcblxyXG4gICAgLm5vdEZvdW5kLFxyXG4gICAgLnVua25vd24ge1xyXG4gICAgICAgIGZpbHRlcjogZ3JheXNjYWxlKDEwMCUpO1xyXG4gICAgfVxyXG5cclxuICAgIC5yZXdhcmQge1xyXG4gICAgICAgIHotaW5kZXg6IDEwO1xyXG4gICAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgICAgICBib3R0b206IDA7XHJcbiAgICAgICAgcmlnaHQ6IDA7XHJcbiAgICAgICAgd2lkdGg6IDE2cHg7XHJcbiAgICAgICAgaGVpZ2h0OiAxNnB4O1xyXG4gICAgfVxyXG5cclxuICAgIC5ibG9jayB7XHJcbiAgICAgICAgei1pbmRleDogMTA7XHJcbiAgICAgICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgICAgIHRvcDogMDtcclxuICAgICAgICByaWdodDogMDtcclxuICAgICAgICB3aWR0aDogMTZweDtcclxuICAgICAgICBoZWlnaHQ6IDE2cHg7XHJcbiAgICB9XHJcbn0iXX0= */"
+module.exports = ".imageContainer {\n  width: 100%;\n  height: 100%;\n  text-align: center;\n  position: relative; }\n  .imageContainer .notFound,\n  .imageContainer .unknown {\n    -webkit-filter: grayscale(100%);\n            filter: grayscale(100%); }\n  .imageContainer .reward {\n    z-index: 10;\n    position: absolute;\n    bottom: 7px;\n    left: 0;\n    width: 16px;\n    height: 16px; }\n  .imageContainer .block {\n    z-index: 10;\n    position: absolute;\n    bottom: 7px;\n    right: 0;\n    width: 16px;\n    height: 16px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYWx0dHByLXVpL2R1bmdlb24tdGlsZS9EOlxcUHJvamVjdHNcXFRyYWNrZXJBTFRUUFIvc3JjXFxhcHBcXGFsdHRwci11aVxcZHVuZ2Vvbi10aWxlXFxkdW5nZW9uLXRpbGUuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxZQUFXO0VBQ1gsYUFBWTtFQUNaLG1CQUFrQjtFQUNsQixtQkFBa0IsRUF3QnJCO0VBNUJEOztJQVFRLGdDQUF1QjtZQUF2Qix3QkFBdUIsRUFDMUI7RUFUTDtJQVlRLFlBQVc7SUFDWCxtQkFBa0I7SUFDbEIsWUFBVztJQUNYLFFBQU87SUFDUCxZQUFXO0lBQ1gsYUFBWSxFQUNmO0VBbEJMO0lBcUJRLFlBQVc7SUFDWCxtQkFBa0I7SUFDbEIsWUFBVztJQUNYLFNBQVE7SUFDUixZQUFXO0lBQ1gsYUFBWSxFQUNmIiwiZmlsZSI6InNyYy9hcHAvYWx0dHByLXVpL2R1bmdlb24tdGlsZS9kdW5nZW9uLXRpbGUuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuaW1hZ2VDb250YWluZXIge1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBoZWlnaHQ6IDEwMCU7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcblxyXG4gICAgLm5vdEZvdW5kLFxyXG4gICAgLnVua25vd24ge1xyXG4gICAgICAgIGZpbHRlcjogZ3JheXNjYWxlKDEwMCUpO1xyXG4gICAgfVxyXG5cclxuICAgIC5yZXdhcmQge1xyXG4gICAgICAgIHotaW5kZXg6IDEwO1xyXG4gICAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgICAgICBib3R0b206IDdweDtcclxuICAgICAgICBsZWZ0OiAwO1xyXG4gICAgICAgIHdpZHRoOiAxNnB4O1xyXG4gICAgICAgIGhlaWdodDogMTZweDtcclxuICAgIH1cclxuXHJcbiAgICAuYmxvY2sge1xyXG4gICAgICAgIHotaW5kZXg6IDEwO1xyXG4gICAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgICAgICBib3R0b206IDdweDtcclxuICAgICAgICByaWdodDogMDtcclxuICAgICAgICB3aWR0aDogMTZweDtcclxuICAgICAgICBoZWlnaHQ6IDE2cHg7XHJcbiAgICB9XHJcbn0iXX0= */"
 
 /***/ }),
 
@@ -207,6 +219,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var JsonImages = /** @class */ (function () {
     function JsonImages(imageRepo, filename) {
+        this._preloadedImagesCache = [];
         this._imageRepo = imageRepo;
         this._filename = filename;
     }
@@ -220,13 +233,20 @@ var JsonImages = /** @class */ (function () {
                     case 1: return [4 /*yield*/, (_a.sent()).json()];
                     case 2:
                         images = _a.sent();
+                        this._preloadedImagesCache = [];
                         Object.keys(images).forEach(function (id) {
+                            _this._preloadImage(images[id]);
                             _this._imageRepo.addImage(id, images[id]);
                         });
                         return [2 /*return*/];
                 }
             });
         });
+    };
+    JsonImages.prototype._preloadImage = function (url) {
+        var img = new Image();
+        img.src = url;
+        this._preloadedImagesCache.push(img);
     };
     JsonImages = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])(),
@@ -451,7 +471,7 @@ var MultiplayerService = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<standard [config]=\"config\"></standard>"
+module.exports = "<standard *ngIf=\"config\" [config]=\"config\"></standard>"
 
 /***/ }),
 
@@ -486,7 +506,7 @@ var SingleplayerComponent = /** @class */ (function () {
     function SingleplayerComponent(configuration) {
         this._configRepository = configuration;
     }
-    SingleplayerComponent.prototype.ngOnInit = function () {
+    SingleplayerComponent.prototype.getNewConfig = function () {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
             var _a;
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_b) {
@@ -501,6 +521,20 @@ var SingleplayerComponent = /** @class */ (function () {
             });
         });
     };
+    SingleplayerComponent.prototype.ngOnInit = function () {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                this.getNewConfig();
+                return [2 /*return*/];
+            });
+        });
+    };
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["HostListener"])('window:keyup.r'),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Function),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", []),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:returntype", Promise)
+    ], SingleplayerComponent.prototype, "getNewConfig", null);
     SingleplayerComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'singleplayer',
@@ -523,7 +557,7 @@ var SingleplayerComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ng-container *ngIf=\"config\">\n  <activable-tile\n    class=\"tile\"\n    [item]=\"config.getItem(Item.Bow)\"></activable-tile>\n  <activable-tile\n    class=\"tile\"\n    [item]=\"config.getItem(Item.BlueBoomerang)\"></activable-tile>\n  <select-tile\n    class=\"tile\"\n    [item]=\"config.getItem(Item.Sword)\"></select-tile>\n  <dungeon-tile\n    class=\"tile\"\n    [item]=\"config.getItem(Dungeon.EasternPalace)\"></dungeon-tile>\n  <dungeon-tile\n    class=\"tile\"\n    [item]=\"config.getItem(Dungeon.MiseryMire)\"></dungeon-tile>\n</ng-container>"
+module.exports = "<ng-container *ngIf=\"isReady\">\r\n  <ng-container\r\n    *ngFor=\"let tile of tiles\"\r\n    [ngSwitch]=\"tile.type\">\r\n    <activable-tile\r\n      *ngSwitchCase=\"'Activable'\"\r\n      class=\"tile\"\r\n      [item]=\"tile\"></activable-tile>\r\n    <select-tile\r\n      *ngSwitchCase=\"'Select'\"\r\n      class=\"tile\"\r\n      [item]=\"tile\"></select-tile>\r\n    <dungeon-tile\r\n      *ngSwitchCase=\"'Dungeon'\"\r\n      class=\"tile\"\r\n      [item]=\"tile\"></dungeon-tile>\r\n  </ng-container>\r\n</ng-container>"
 
 /***/ }),
 
@@ -534,7 +568,7 @@ module.exports = "<ng-container *ngIf=\"config\">\n  <activable-tile\n    class=
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".tile {\n  width: 32px;\n  height: 32px;\n  max-width: 32px;\n  max-height: 32px;\n  background-color: #2b4e4e;\n  overflow: hidden;\n  margin: 1px;\n  border-radius: 3px;\n  display: inline-block; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYWx0dHByLXVpL3N0YW5kYXJkL0Q6XFxQcm9qZWN0c1xcVHJhY2tlckFMVFRQUi9zcmNcXGFwcFxcYWx0dHByLXVpXFxzdGFuZGFyZFxcc3RhbmRhcmQuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxZQUFXO0VBQ1gsYUFBWTtFQUNaLGdCQUFlO0VBQ2YsaUJBQWdCO0VBQ2hCLDBCQUF5QjtFQUN6QixpQkFBZ0I7RUFDaEIsWUFBVztFQUNYLG1CQUFrQjtFQUNsQixzQkFBcUIsRUFDeEIiLCJmaWxlIjoic3JjL2FwcC9hbHR0cHItdWkvc3RhbmRhcmQvc3RhbmRhcmQuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIudGlsZSB7XHJcbiAgICB3aWR0aDogMzJweDtcclxuICAgIGhlaWdodDogMzJweDtcclxuICAgIG1heC13aWR0aDogMzJweDtcclxuICAgIG1heC1oZWlnaHQ6IDMycHg7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMmI0ZTRlO1xyXG4gICAgb3ZlcmZsb3c6IGhpZGRlbjtcclxuICAgIG1hcmdpbjogMXB4O1xyXG4gICAgYm9yZGVyLXJhZGl1czogM3B4O1xyXG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xyXG59Il19 */"
+module.exports = ":host {\n  display: flex;\n  flex-wrap: wrap; }\n\n.tile {\n  width: 32px;\n  height: 32px;\n  max-width: 32px;\n  max-height: 32px;\n  overflow: hidden;\n  margin: 1px;\n  display: block; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYWx0dHByLXVpL3N0YW5kYXJkL0Q6XFxQcm9qZWN0c1xcVHJhY2tlckFMVFRQUi9zcmNcXGFwcFxcYWx0dHByLXVpXFxzdGFuZGFyZFxcc3RhbmRhcmQuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxjQUFhO0VBQ2IsZ0JBQWUsRUFDbEI7O0FBRUQ7RUFDSSxZQUFXO0VBQ1gsYUFBWTtFQUNaLGdCQUFlO0VBQ2YsaUJBQWdCO0VBQ2hCLGlCQUFnQjtFQUNoQixZQUFXO0VBQ1gsZUFBYyxFQUNqQiIsImZpbGUiOiJzcmMvYXBwL2FsdHRwci11aS9zdGFuZGFyZC9zdGFuZGFyZC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIjpob3N0IHtcclxuICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICBmbGV4LXdyYXA6IHdyYXA7XHJcbn1cclxuXHJcbi50aWxlIHtcclxuICAgIHdpZHRoOiAzMnB4O1xyXG4gICAgaGVpZ2h0OiAzMnB4O1xyXG4gICAgbWF4LXdpZHRoOiAzMnB4O1xyXG4gICAgbWF4LWhlaWdodDogMzJweDtcclxuICAgIG92ZXJmbG93OiBoaWRkZW47XHJcbiAgICBtYXJnaW46IDFweDtcclxuICAgIGRpc3BsYXk6IGJsb2NrO1xyXG59Il19 */"
 
 /***/ }),
 
@@ -550,20 +584,36 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StandardComponent", function() { return StandardComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var src_app_alttpr_ids_Item__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/alttpr/ids/Item */ "./src/app/alttpr/ids/Item.ts");
-/* harmony import */ var src_app_alttpr_ids_Dungeon__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/alttpr/ids/Dungeon */ "./src/app/alttpr/ids/Dungeon.ts");
-/* harmony import */ var src_app_alttpr_ids_SwordState__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/alttpr/ids/SwordState */ "./src/app/alttpr/ids/SwordState.ts");
-
-
+/* harmony import */ var src_app_core_ui_layout_fetcher_layout_fetcher__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/core-ui/layout/fetcher/layout-fetcher */ "./src/app/core-ui/layout/fetcher/layout-fetcher.ts");
 
 
 
 var StandardComponent = /** @class */ (function () {
-    function StandardComponent() {
-        this.Item = src_app_alttpr_ids_Item__WEBPACK_IMPORTED_MODULE_2__["Item"];
-        this.Dungeon = src_app_alttpr_ids_Dungeon__WEBPACK_IMPORTED_MODULE_3__["Dungeon"];
-        this.SwordState = src_app_alttpr_ids_SwordState__WEBPACK_IMPORTED_MODULE_4__["SwordState"];
+    function StandardComponent(layoutFetcher) {
+        this.isReady = false;
+        this._layoutFetcher = layoutFetcher;
     }
+    StandardComponent.prototype.ngOnChanges = function () {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var _a;
+            var _this = this;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_b) {
+                switch (_b.label) {
+                    case 0:
+                        _a = this;
+                        return [4 /*yield*/, this._layoutFetcher.getLayout()];
+                    case 1:
+                        _a._layout = _b.sent();
+                        this.tiles = [];
+                        this._layout.tilesOrder.forEach(function (tileId) {
+                            _this.tiles.push(_this.config.getItem(tileId));
+                        });
+                        this.isReady = true;
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
@@ -573,9 +623,160 @@ var StandardComponent = /** @class */ (function () {
             selector: 'standard',
             template: __webpack_require__(/*! ./standard.component.html */ "./src/app/alttpr-ui/standard/standard.component.html"),
             styles: [__webpack_require__(/*! ./standard.component.scss */ "./src/app/alttpr-ui/standard/standard.component.scss")]
-        })
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_core_ui_layout_fetcher_layout_fetcher__WEBPACK_IMPORTED_MODULE_2__["ILayoutFetcher"]])
     ], StandardComponent);
     return StandardComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/alttpr-ui/timer/timer.component.html":
+/*!******************************************************!*\
+  !*** ./src/app/alttpr-ui/timer/timer.component.html ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div>{{ display }}</div>"
+
+/***/ }),
+
+/***/ "./src/app/alttpr-ui/timer/timer.component.scss":
+/*!******************************************************!*\
+  !*** ./src/app/alttpr-ui/timer/timer.component.scss ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "@font-face {\n  font-family: digital;\n  src: url(digital2.ttf); }\n\n:host {\n  display: block;\n  margin-bottom: 5px;\n  font-family: digital;\n  text-align: center;\n  font-size: 32px;\n  color: white; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYWx0dHByLXVpL3RpbWVyL0Q6XFxQcm9qZWN0c1xcVHJhY2tlckFMVFRQUi9zcmNcXGFwcFxcYWx0dHByLXVpXFx0aW1lclxcdGltZXIuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxxQkFBb0I7RUFDcEIsdUJBQXNCLEVBQUE7O0FBRzFCO0VBQ0ksZUFBYztFQUNkLG1CQUFrQjtFQUNsQixxQkFBb0I7RUFDcEIsbUJBQWtCO0VBQ2xCLGdCQUFlO0VBQ2YsYUFBWSxFQUNmIiwiZmlsZSI6InNyYy9hcHAvYWx0dHByLXVpL3RpbWVyL3RpbWVyLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiQGZvbnQtZmFjZSB7XHJcbiAgICBmb250LWZhbWlseTogZGlnaXRhbDtcclxuICAgIHNyYzogdXJsKGRpZ2l0YWwyLnR0Zik7XHJcbn1cclxuXHJcbjpob3N0IHtcclxuICAgIGRpc3BsYXk6IGJsb2NrO1xyXG4gICAgbWFyZ2luLWJvdHRvbTogNXB4O1xyXG4gICAgZm9udC1mYW1pbHk6IGRpZ2l0YWw7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICBmb250LXNpemU6IDMycHg7XHJcbiAgICBjb2xvcjogd2hpdGU7XHJcbn1cclxuIl19 */"
+
+/***/ }),
+
+/***/ "./src/app/alttpr-ui/timer/timer.component.ts":
+/*!****************************************************!*\
+  !*** ./src/app/alttpr-ui/timer/timer.component.ts ***!
+  \****************************************************/
+/*! exports provided: TimerComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TimerComponent", function() { return TimerComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var TimerComponent = /** @class */ (function () {
+    function TimerComponent() {
+        this.running = false;
+        this.times = [];
+        this.reset();
+        this.print();
+    }
+    TimerComponent.prototype.ngOnInit = function () {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                return [2 /*return*/];
+            });
+        });
+    };
+    TimerComponent.prototype.reset = function () {
+        this.times = [0, 0, 0, 0];
+        this.print();
+    };
+    TimerComponent.prototype.action = function () {
+        if (this.time) {
+            this.stop();
+        }
+        else {
+            this.start();
+        }
+    };
+    TimerComponent.prototype.start = function () {
+        if (!this.time)
+            this.time = performance.now();
+        if (!this.running) {
+            this.running = true;
+            requestAnimationFrame(this.step.bind(this));
+        }
+    };
+    TimerComponent.prototype.stop = function () {
+        this.running = false;
+        this.time = null;
+    };
+    TimerComponent.prototype.restart = function () {
+        if (!this.time)
+            this.time = performance.now();
+        if (!this.running) {
+            this.running = true;
+            requestAnimationFrame(this.step.bind(this));
+        }
+        this.reset();
+    };
+    TimerComponent.prototype.step = function (timestamp) {
+        if (!this.running)
+            return;
+        this.calculate(timestamp);
+        this.time = timestamp;
+        this.print();
+        requestAnimationFrame(this.step.bind(this));
+    };
+    TimerComponent.prototype.calculate = function (timestamp) {
+        var diff = timestamp - this.time;
+        // Hundredths of a second are 100 ms
+        this.times[3] += diff / 10;
+        // Seconds are 100 hundredths of a second
+        if (this.times[3] >= 100) {
+            this.times[2] += 1;
+            this.times[3] -= 100;
+        }
+        // Minutes are 60 seconds
+        if (this.times[2] >= 60) {
+            this.times[1] += 1;
+            this.times[2] -= 60;
+        }
+        // Hours are 60 minutes
+        if (this.times[1] >= 60) {
+            this.times[0] += 1;
+            this.times[1] -= 60;
+        }
+    };
+    TimerComponent.prototype.print = function () {
+        this.display = this.format(this.times);
+    };
+    TimerComponent.prototype.format = function (times) {
+        return this.pad0(times[0], 2) + ":" + this.pad0(times[1], 2) + ":" + this.pad0(times[2], 2) + ":" + this.pad0(Math.floor(times[3]), 2);
+    };
+    TimerComponent.prototype.pad0 = function (value, count) {
+        var result = value.toString();
+        for (; result.length < count; --count)
+            result = '0' + result;
+        return result;
+    };
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["HostListener"])('window:keyup.r'),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Function),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", []),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:returntype", void 0)
+    ], TimerComponent.prototype, "reset", null);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["HostListener"])('window:keyup.q'),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Function),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", []),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:returntype", void 0)
+    ], TimerComponent.prototype, "action", null);
+    TimerComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'timer',
+            template: __webpack_require__(/*! ./timer.component.html */ "./src/app/alttpr-ui/timer/timer.component.html"),
+            styles: [__webpack_require__(/*! ./timer.component.scss */ "./src/app/alttpr-ui/timer/timer.component.scss")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], TimerComponent);
+    return TimerComponent;
 }());
 
 
@@ -606,10 +807,10 @@ var ALTTPConfigHelper = /** @class */ (function () {
     ALTTPConfigHelper.createDungeonRewardSelect = function (dungeonId) {
         return new _core_item_Select__WEBPACK_IMPORTED_MODULE_0__["Select"](_ids_Utils__WEBPACK_IMPORTED_MODULE_1__["Utils"].dungeonRewardId(dungeonId), [
             _ids_DungeonReward__WEBPACK_IMPORTED_MODULE_2__["DungeonReward"].Unknown,
-            _ids_DungeonReward__WEBPACK_IMPORTED_MODULE_2__["DungeonReward"].Pendant,
-            _ids_DungeonReward__WEBPACK_IMPORTED_MODULE_2__["DungeonReward"].GreenPendant,
             _ids_DungeonReward__WEBPACK_IMPORTED_MODULE_2__["DungeonReward"].Crystal,
-            _ids_DungeonReward__WEBPACK_IMPORTED_MODULE_2__["DungeonReward"].RedCrystal
+            _ids_DungeonReward__WEBPACK_IMPORTED_MODULE_2__["DungeonReward"].RedCrystal,
+            _ids_DungeonReward__WEBPACK_IMPORTED_MODULE_2__["DungeonReward"].Pendant,
+            _ids_DungeonReward__WEBPACK_IMPORTED_MODULE_2__["DungeonReward"].GreenPendant
         ]);
     };
     ALTTPConfigHelper.createDungeonBlockSelect = function (dungeonId) {
@@ -623,25 +824,6 @@ var ALTTPConfigHelper = /** @class */ (function () {
     return ALTTPConfigHelper;
 }());
 
-
-
-/***/ }),
-
-/***/ "./src/app/alttpr/ids/Dungeon.ts":
-/*!***************************************!*\
-  !*** ./src/app/alttpr/ids/Dungeon.ts ***!
-  \***************************************/
-/*! exports provided: Dungeon */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Dungeon", function() { return Dungeon; });
-var Dungeon;
-(function (Dungeon) {
-    Dungeon["EasternPalace"] = "Dungeon_EasternPalace";
-    Dungeon["MiseryMire"] = "Dungeon_MiseryMire";
-})(Dungeon || (Dungeon = {}));
 
 
 /***/ }),
@@ -685,54 +867,6 @@ var DungeonReward;
     DungeonReward["Crystal"] = "DungeonReward_Crystal";
     DungeonReward["RedCrystal"] = "DungeonReward_RedCrystal";
 })(DungeonReward || (DungeonReward = {}));
-
-
-/***/ }),
-
-/***/ "./src/app/alttpr/ids/Item.ts":
-/*!************************************!*\
-  !*** ./src/app/alttpr/ids/Item.ts ***!
-  \************************************/
-/*! exports provided: Item */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Item", function() { return Item; });
-var Item;
-(function (Item) {
-    Item["Bow"] = "Item_Bow";
-    Item["SilverArrows"] = "Item_SilverArrows";
-    Item["BlueBoomerang"] = "Item_BlueBoomerang";
-    Item["RedBoomerang"] = "Item_RedBoomerang";
-    Item["Hookshot"] = "Item_Hookshot";
-    Item["Mushroom"] = "Item_Mushroom";
-    Item["Bottle"] = "Item_Bottle";
-    Item["Sword"] = "Item_Sword";
-    // ...
-})(Item || (Item = {}));
-
-
-/***/ }),
-
-/***/ "./src/app/alttpr/ids/SwordState.ts":
-/*!******************************************!*\
-  !*** ./src/app/alttpr/ids/SwordState.ts ***!
-  \******************************************/
-/*! exports provided: SwordState */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SwordState", function() { return SwordState; });
-var SwordState;
-(function (SwordState) {
-    SwordState["NotFound"] = "SwordState_NotFound";
-    SwordState["Hero"] = "SwordState_Hero";
-    SwordState["Master"] = "SwordState_Master";
-    SwordState["Tempered"] = "SwordState_Tempered";
-    SwordState["Gold"] = "SwordState_Gold";
-})(SwordState || (SwordState = {}));
 
 
 /***/ }),
@@ -815,6 +949,7 @@ var DungeonTile = /** @class */ (function (_super) {
     tslib__WEBPACK_IMPORTED_MODULE_0__["__extends"](DungeonTile, _super);
     function DungeonTile(id) {
         var _this = _super.call(this, id) || this;
+        _this.type = 'Dungeon';
         _this.reward = _ALTTPR_config_helper__WEBPACK_IMPORTED_MODULE_2__["ALTTPConfigHelper"].createDungeonRewardSelect(id);
         _this.reward.onUpdate.subscribe(function () { return _this._emitChange(); });
         return _this;
@@ -831,17 +966,6 @@ var DungeonTile = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ "./src/app/app.component.css":
-/*!***********************************!*\
-  !*** ./src/app/app.component.css ***!
-  \***********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuY3NzIn0= */"
-
-/***/ }),
-
 /***/ "./src/app/app.component.html":
 /*!************************************!*\
   !*** ./src/app/app.component.html ***!
@@ -849,7 +973,18 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<multiplayer></multiplayer>"
+module.exports = "<timer></timer>\r\n<singleplayer></singleplayer>"
+
+/***/ }),
+
+/***/ "./src/app/app.component.scss":
+/*!************************************!*\
+  !*** ./src/app/app.component.scss ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ":host.darkmode {\n  background-color: gray; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvRDpcXFByb2plY3RzXFxUcmFja2VyQUxUVFBSL3NyY1xcYXBwXFxhcHAuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFFSSx1QkFBc0IsRUFDdkIiLCJmaWxlIjoic3JjL2FwcC9hcHAuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyI6aG9zdCB7XHJcbiAgJi5kYXJrbW9kZSB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiBncmF5O1xyXG4gIH1cclxufSJdfQ== */"
 
 /***/ }),
 
@@ -869,12 +1004,26 @@ __webpack_require__.r(__webpack_exports__);
 
 var AppComponent = /** @class */ (function () {
     function AppComponent() {
+        this.darkmode = false;
     }
+    AppComponent.prototype.toggleDarkMode = function () {
+        this.darkmode = !this.darkmode;
+    };
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["HostBinding"])('class.darkmode'),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Boolean)
+    ], AppComponent.prototype, "darkmode", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["HostBinding"])('window:keyup.d'),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Function),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", []),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:returntype", void 0)
+    ], AppComponent.prototype, "toggleDarkMode", null);
     AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-root',
             template: __webpack_require__(/*! ./app.component.html */ "./src/app/app.component.html"),
-            styles: [__webpack_require__(/*! ./app.component.css */ "./src/app/app.component.css")]
+            styles: [__webpack_require__(/*! ./app.component.scss */ "./src/app/app.component.scss")]
         })
     ], AppComponent);
     return AppComponent;
@@ -1080,7 +1229,11 @@ var SelectTileParser = /** @class */ (function () {
         this.type = 'Select';
     }
     SelectTileParser.prototype.parse = function (config) {
-        return [new _core_item_Select__WEBPACK_IMPORTED_MODULE_0__["Select"](config.id, config.states)];
+        var tile = new _core_item_Select__WEBPACK_IMPORTED_MODULE_0__["Select"](config.id, config.states);
+        if (config.initialState) {
+            tile.state = config.initialState;
+        }
+        return [tile];
     };
     return SelectTileParser;
 }());
@@ -1107,7 +1260,7 @@ module.exports = "<div class=\"imageContainer\" (click)=\"item.toggle()\" (conte
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".imageContainer {\n  width: 100%;\n  height: 100%; }\n  .imageContainer img {\n    width: 100%;\n    height: 100%; }\n  .imageContainer .notFound {\n    -webkit-filter: grayscale(100%);\n            filter: grayscale(100%); }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29yZS11aS9hY3RpdmFibGUtdGlsZS9EOlxcUHJvamVjdHNcXFRyYWNrZXJBTFRUUFIvc3JjXFxhcHBcXGNvcmUtdWlcXGFjdGl2YWJsZS10aWxlXFxhY3RpdmFibGUtdGlsZS5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLFlBQVc7RUFDWCxhQUFZLEVBVWY7RUFaRDtJQUtRLFlBQVc7SUFDWCxhQUFZLEVBQ2Y7RUFQTDtJQVVRLGdDQUF1QjtZQUF2Qix3QkFBdUIsRUFDMUIiLCJmaWxlIjoic3JjL2FwcC9jb3JlLXVpL2FjdGl2YWJsZS10aWxlL2FjdGl2YWJsZS10aWxlLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmltYWdlQ29udGFpbmVyIHtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgaGVpZ2h0OiAxMDAlO1xyXG5cclxuICAgIGltZyB7XHJcbiAgICAgICAgd2lkdGg6IDEwMCU7XHJcbiAgICAgICAgaGVpZ2h0OiAxMDAlO1xyXG4gICAgfVxyXG4gICAgXHJcbiAgICAubm90Rm91bmQge1xyXG4gICAgICAgIGZpbHRlcjogZ3JheXNjYWxlKDEwMCUpO1xyXG4gICAgfVxyXG59Il19 */"
+module.exports = ".imageContainer {\n  width: 100%;\n  height: 100%; }\n  .imageContainer img {\n    width: 100%;\n    height: 100%;\n    -ms-interpolation-mode: nearest-neighbor;\n        image-rendering: pixelated;\n    image-rendering: -moz-crisp-edges;\n    image-rendering: crisp-edges; }\n  .imageContainer .notFound {\n    -webkit-filter: brightness(50%) grayscale(100%);\n            filter: brightness(50%) grayscale(100%); }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29yZS11aS9hY3RpdmFibGUtdGlsZS9EOlxcUHJvamVjdHNcXFRyYWNrZXJBTFRUUFIvc3JjXFxhcHBcXGNvcmUtdWlcXGFjdGl2YWJsZS10aWxlXFxhY3RpdmFibGUtdGlsZS5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLFlBQVc7RUFDWCxhQUFZLEVBYWY7RUFmRDtJQUtRLFlBQVc7SUFDWCxhQUFZO0lBQ1oseUNBQTBCO1FBQTFCLDJCQUEwQjtJQUMxQixrQ0FBaUM7SUFDakMsNkJBQTRCLEVBQy9CO0VBVkw7SUFhUSxnREFBdUM7WUFBdkMsd0NBQXVDLEVBQzFDIiwiZmlsZSI6InNyYy9hcHAvY29yZS11aS9hY3RpdmFibGUtdGlsZS9hY3RpdmFibGUtdGlsZS5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5pbWFnZUNvbnRhaW5lciB7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICAgIGhlaWdodDogMTAwJTtcclxuXHJcbiAgICBpbWcge1xyXG4gICAgICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgICAgIGhlaWdodDogMTAwJTtcclxuICAgICAgICBpbWFnZS1yZW5kZXJpbmc6IHBpeGVsYXRlZDtcclxuICAgICAgICBpbWFnZS1yZW5kZXJpbmc6IC1tb3otY3Jpc3AtZWRnZXM7XHJcbiAgICAgICAgaW1hZ2UtcmVuZGVyaW5nOiBjcmlzcC1lZGdlcztcclxuICAgIH1cclxuICAgIFxyXG4gICAgLm5vdEZvdW5kIHtcclxuICAgICAgICBmaWx0ZXI6IGJyaWdodG5lc3MoNTAlKSBncmF5c2NhbGUoMTAwJSk7XHJcbiAgICB9XHJcbn0iXX0= */"
 
 /***/ }),
 
@@ -1235,6 +1388,66 @@ var ImageRepository = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/core-ui/layout/fetcher/json-layout.ts":
+/*!*******************************************************!*\
+  !*** ./src/app/core-ui/layout/fetcher/json-layout.ts ***!
+  \*******************************************************/
+/*! exports provided: JsonLayoutFetcher */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "JsonLayoutFetcher", function() { return JsonLayoutFetcher; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+var JsonLayoutFetcher = /** @class */ (function () {
+    function JsonLayoutFetcher(jsonPath) {
+        this._jsonPath = jsonPath;
+    }
+    JsonLayoutFetcher.prototype.getLayout = function () {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var layoutJson, layout;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, fetch(this._jsonPath)];
+                    case 1: return [4 /*yield*/, (_a.sent()).json()];
+                    case 2:
+                        layoutJson = _a.sent();
+                        layout = {
+                            tilesOrder: layoutJson.tiles
+                        };
+                        return [2 /*return*/, layout];
+                }
+            });
+        });
+    };
+    return JsonLayoutFetcher;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/core-ui/layout/fetcher/layout-fetcher.ts":
+/*!**********************************************************!*\
+  !*** ./src/app/core-ui/layout/fetcher/layout-fetcher.ts ***!
+  \**********************************************************/
+/*! exports provided: ILayoutFetcher */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ILayoutFetcher", function() { return ILayoutFetcher; });
+var ILayoutFetcher = /** @class */ (function () {
+    function ILayoutFetcher() {
+    }
+    return ILayoutFetcher;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/core-ui/select-tile/select-tile.component.html":
 /*!****************************************************************!*\
   !*** ./src/app/core-ui/select-tile/select-tile.component.html ***!
@@ -1253,7 +1466,7 @@ module.exports = "<div class=\"imageContainer\" (click)=\"next()\" (contextmenu)
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".imageContainer {\n  width: 100%;\n  height: 100%;\n  text-align: center; }\n  .imageContainer img {\n    width: 100%;\n    height: 100%; }\n  .imageContainer .notFound {\n    -webkit-filter: grayscale(100%);\n            filter: grayscale(100%); }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29yZS11aS9zZWxlY3QtdGlsZS9EOlxcUHJvamVjdHNcXFRyYWNrZXJBTFRUUFIvc3JjXFxhcHBcXGNvcmUtdWlcXHNlbGVjdC10aWxlXFxzZWxlY3QtdGlsZS5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLFlBQVc7RUFDWCxhQUFZO0VBQ1osbUJBQWtCLEVBVXJCO0VBYkQ7SUFNUSxZQUFXO0lBQ1gsYUFBWSxFQUNmO0VBUkw7SUFXUSxnQ0FBdUI7WUFBdkIsd0JBQXVCLEVBQzFCIiwiZmlsZSI6InNyYy9hcHAvY29yZS11aS9zZWxlY3QtdGlsZS9zZWxlY3QtdGlsZS5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5pbWFnZUNvbnRhaW5lciB7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICAgIGhlaWdodDogMTAwJTtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuXHJcbiAgICBpbWcge1xyXG4gICAgICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgICAgIGhlaWdodDogMTAwJTtcclxuICAgIH1cclxuXHJcbiAgICAubm90Rm91bmQge1xyXG4gICAgICAgIGZpbHRlcjogZ3JheXNjYWxlKDEwMCUpO1xyXG4gICAgfVxyXG59Il19 */"
+module.exports = ".imageContainer {\n  width: 100%;\n  height: 100%;\n  text-align: center; }\n  .imageContainer img {\n    width: 100%;\n    height: 100%;\n    -ms-interpolation-mode: nearest-neighbor;\n        image-rendering: pixelated;\n    image-rendering: -moz-crisp-edges;\n    image-rendering: crisp-edges; }\n  .imageContainer .notFound {\n    -webkit-filter: brightness(50%) grayscale(100%);\n            filter: brightness(50%) grayscale(100%); }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29yZS11aS9zZWxlY3QtdGlsZS9EOlxcUHJvamVjdHNcXFRyYWNrZXJBTFRUUFIvc3JjXFxhcHBcXGNvcmUtdWlcXHNlbGVjdC10aWxlXFxzZWxlY3QtdGlsZS5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLFlBQVc7RUFDWCxhQUFZO0VBQ1osbUJBQWtCLEVBYXJCO0VBaEJEO0lBTVEsWUFBVztJQUNYLGFBQVk7SUFDWix5Q0FBMEI7UUFBMUIsMkJBQTBCO0lBQzFCLGtDQUFpQztJQUNqQyw2QkFBNEIsRUFDL0I7RUFYTDtJQWNRLGdEQUF1QztZQUF2Qyx3Q0FBdUMsRUFDMUMiLCJmaWxlIjoic3JjL2FwcC9jb3JlLXVpL3NlbGVjdC10aWxlL3NlbGVjdC10aWxlLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmltYWdlQ29udGFpbmVyIHtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgaGVpZ2h0OiAxMDAlO1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG5cclxuICAgIGltZyB7XHJcbiAgICAgICAgd2lkdGg6IDEwMCU7XHJcbiAgICAgICAgaGVpZ2h0OiAxMDAlO1xyXG4gICAgICAgIGltYWdlLXJlbmRlcmluZzogcGl4ZWxhdGVkO1xyXG4gICAgICAgIGltYWdlLXJlbmRlcmluZzogLW1vei1jcmlzcC1lZGdlcztcclxuICAgICAgICBpbWFnZS1yZW5kZXJpbmc6IGNyaXNwLWVkZ2VzO1xyXG4gICAgfVxyXG5cclxuICAgIC5ub3RGb3VuZCB7XHJcbiAgICAgICAgZmlsdGVyOiBicmlnaHRuZXNzKDUwJSkgZ3JheXNjYWxlKDEwMCUpO1xyXG4gICAgfVxyXG59Il19 */"
 
 /***/ }),
 
@@ -1439,6 +1652,7 @@ var Activable = /** @class */ (function (_super) {
     tslib__WEBPACK_IMPORTED_MODULE_0__["__extends"](Activable, _super);
     function Activable(id) {
         var _this = _super.call(this) || this;
+        _this.type = 'Activable';
         _this._isActive = false;
         _this.id = id;
         return _this;
@@ -1487,6 +1701,7 @@ var Count = /** @class */ (function (_super) {
     tslib__WEBPACK_IMPORTED_MODULE_0__["__extends"](Count, _super);
     function Count(id, from, to) {
         var _this = _super.call(this) || this;
+        _this.type = 'Count';
         _this._select = new _Select__WEBPACK_IMPORTED_MODULE_1__["Select"](id + "_internal_select", _this._createNumberList(from, to));
         _this._select.onUpdate.subscribe(function () { return _this._emitChange(); });
         _this.id = id;
@@ -1534,6 +1749,7 @@ var Select = /** @class */ (function (_super) {
     tslib__WEBPACK_IMPORTED_MODULE_0__["__extends"](Select, _super);
     function Select(id, states) {
         var _this = _super.call(this) || this;
+        _this.type = 'Select';
         _this.id = id;
         _this.states = states;
         _this._statesMap = states.reduce(function (tot, value) {

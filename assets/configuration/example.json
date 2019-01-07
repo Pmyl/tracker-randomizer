@@ -2,6 +2,17 @@
     "tiles": [
         {
             "type": "Select",
+            "id": "Item_Armor",
+            "states": [
+                "ArmorState_NotFound",
+                "ArmorState_Green",
+                "ArmorState_Blue",
+                "ArmorState_Red"
+            ],
+            "initialState": "ArmorState_Green"
+        },
+        {
+            "type": "Select",
             "id": "Item_Sword",
             "states": [
                 "SwordState_NotFound",
@@ -12,12 +23,108 @@
             ]
         },
         {
+            "type": "Select",
+            "id": "Item_Shield",
+            "states": [
+                "ShieldState_NotFound",
+                "ShieldState_Fighter",
+                "ShieldState_Red",
+                "ShieldState_Mirror"
+            ]
+        },
+        {
+            "type": "Activable",
+            "id": "Item_MoonPearl"
+        },
+        {
+            "type": "Activable",
+            "id": "Item_Hookshot"
+        },
+        {
+            "type": "Select",
+            "id": "Item_Boomerang",
+            "states": [
+                "BoomerangState_NotFound",
+                "BoomerangState_Blue",
+                "BoomerangState_Red",
+                "BoomerangState_Both"
+            ]
+        },
+        {
             "type": "Activable",
             "id": "Item_Bow"
         },
         {
             "type": "Activable",
-            "id": "Item_BlueBoomerang"
+            "id": "Item_SilverArrow"
+        },
+        {
+            "type": "Activable",
+            "id": "Item_Mushroom"
+        },
+        {
+            "type": "Activable",
+            "id": "Item_MagicPowder"
+        },
+        {
+            "type": "Activable",
+            "id": "Item_IceRod"
+        },
+        {
+            "type": "Activable",
+            "id": "Item_FireRod"
+        },
+        {
+            "type": "Activable",
+            "id": "Item_Medallion_Bombos"
+        },
+        {
+            "type": "Activable",
+            "id": "Item_Medallion_Ether"
+        },
+        {
+            "type": "Activable",
+            "id": "Item_Medallion_Quake"
+        },
+        { "type": "Activable", "id": "Item_Lantern" },
+        { "type": "Activable", "id": "Item_Hammer" },
+        { "type": "Activable", "id": "Item_Flute" },
+        { "type": "Activable", "id": "Item_BugNet" },
+        { "type": "Activable", "id": "Item_MudoraBook" },
+        {
+            "type": "Select",
+            "id": "Item_Bottles",
+            "states": [
+                "BottlesState_NotFound",
+                "BottlesState_1",
+                "BottlesState_2",
+                "BottlesState_3",
+                "BottlesState_4"
+            ]
+        },
+        { "type": "Activable", "id": "Item_CaneSomaria" },
+        { "type": "Activable", "id": "Item_CaneByrna" },
+        { "type": "Activable", "id": "Item_Cape" },
+        { "type": "Activable", "id": "Item_Mirror" },
+        { "type": "Activable", "id": "Item_Boots" },
+        {
+            "type": "Select",
+            "id": "Item_Gloves",
+            "states": [
+                "GlovesState_NotFound",
+                "GlovesState_Gloves",
+                "GlovesState_TitanMitts"
+            ]
+        },
+        { "type": "Activable", "id": "Item_Flippers" },
+        { "type": "Activable", "id": "Item_HalfMagic" },
+        {
+            "type": "Select",
+            "id": "Boss_Agahnim",
+            "states": [
+                "AgahnimState_Alive",
+                "AgahnimState_Dead"
+            ]
         },
         {
             "type": "Dungeon",
@@ -25,7 +132,23 @@
         },
         {
             "type": "Dungeon",
+            "id": "Dungeon_DesertPalace"
+        },
+        { "type": "Dungeon", "id": "Dungeon_TowerHera" },
+        { "type": "Dungeon", "id": "Dungeon_PalaceOfDarkness" },
+        { "type": "Dungeon", "id": "Dungeon_SwampPalace" },
+        { "type": "Dungeon", "id": "Dungeon_SkullWoods" },
+        { "type": "Dungeon", "id": "Dungeon_ThievesTown" },
+        { "type": "Dungeon", "id": "Dungeon_IcePalace" },
+        { "type": "Dungeon", "id": "Dungeon_TowerHera" },
+        {
+            "type": "Dungeon",
             "id": "Dungeon_MiseryMire",
+            "blocked": true
+        },
+        {
+            "type": "Dungeon",
+            "id": "Dungeon_TurtleRock",
             "blocked": true
         }
     ]
