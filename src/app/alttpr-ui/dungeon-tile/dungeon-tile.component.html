@@ -1,12 +1,12 @@
 <div class="imageContainer">
-    <activable-tile
-      class="dungeon"
-      [item]="item"></activable-tile>
-    <select-tile
-      class="reward"
-      [item]="item.reward"></select-tile>
-    <select-tile
-      *ngIf="item.block"
-      class="block"
-      [item]="item.block"></select-tile>
+  <activable-tile
+    class="dungeon"
+    [item]="item"></activable-tile>
+  <select-tile
+    class="reward"
+    [item]="item.reward"></select-tile>
+  <select-tile
+    *ngIf="item.block"
+    class="block"
+    [item]="item.block"></select-tile>
 </div>

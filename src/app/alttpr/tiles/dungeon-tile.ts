@@ -4,6 +4,7 @@ import { ALTTPConfigHelper } from '../ALTTPR-config-helper';
 import { Dungeon } from '../ids/Dungeon';
 
 export class DungeonTile extends Activable {
+    public type: string = 'Dungeon';
     public reward: Select;
     public block?: Select;
 

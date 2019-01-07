@@ -6,7 +6,13 @@ export class SelectTileParser implements ITileParser {
     public parse(config: {
         id: string;
         states: Array<string>;
+        initialState: string;
     }): Array<Select> {
-        return [new Select(config.id, config.states)];
+        const tile = new Select(config.id, config.states);
+        if (config.initialState) {
+            tile.state = config.initialState;
+        }
+
+        return [tile];
     }
 }

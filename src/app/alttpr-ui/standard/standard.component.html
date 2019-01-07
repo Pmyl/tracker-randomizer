@@ -1,17 +1,18 @@
-<ng-container *ngIf="config">
-  <activable-tile
-    class="tile"
-    [item]="config.getItem(Item.Bow)"></activable-tile>
-  <activable-tile
-    class="tile"
-    [item]="config.getItem(Item.BlueBoomerang)"></activable-tile>
-  <select-tile
-    class="tile"
-    [item]="config.getItem(Item.Sword)"></select-tile>
-  <dungeon-tile
-    class="tile"
-    [item]="config.getItem(Dungeon.EasternPalace)"></dungeon-tile>
-  <dungeon-tile
-    class="tile"
-    [item]="config.getItem(Dungeon.MiseryMire)"></dungeon-tile>
+<ng-container *ngIf="isReady">
+  <ng-container
+    *ngFor="let tile of tiles"
+    [ngSwitch]="tile.type">
+    <activable-tile
+      *ngSwitchCase="'Activable'"
+      class="tile"
+      [item]="tile"></activable-tile>
+    <select-tile
+      *ngSwitchCase="'Select'"
+      class="tile"
+      [item]="tile"></select-tile>
+    <dungeon-tile
+      *ngSwitchCase="'Dungeon'"
+      class="tile"
+      [item]="tile"></dungeon-tile>
+  </ng-container>
 </ng-container>

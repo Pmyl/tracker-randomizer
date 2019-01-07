@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { IConfigurationFetcher } from 'src/app/configuration/base/configuration-fetcher';
 import { IConfiguration } from 'src/app/core/configuration/base/Configuration';
 
@@ -10,6 +10,11 @@ import { IConfiguration } from 'src/app/core/configuration/base/Configuration';
 export class SingleplayerComponent implements OnInit {
   public config: IConfiguration;
 
+  @HostListener('window:keyup.r')
+  public async getNewConfig(): Promise<void> {
+    this.config = await this._configRepository.getConfig();
+  }
+
   private _configRepository: IConfigurationFetcher;
 
   constructor(configuration: IConfigurationFetcher) {
@@ -17,6 +22,6 @@ export class SingleplayerComponent implements OnInit {
   }
 
   public async ngOnInit() {
-    this.config = await this._configRepository.getConfig();
+    this.getNewConfig();
   }
 }

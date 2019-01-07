@@ -3,6 +3,7 @@ import { Select } from "./Select";
 import { UpdatableItem } from './updatable-item';
 
 export class Count extends UpdatableItem {
+    public type: string = 'Count';
     public id: string;
 
     public get state(): number {

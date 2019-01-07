@@ -1,6 +1,7 @@
 import { IItem } from './Item';
 import { UpdatableItem } from './updatable-item';
 export class Select<TValue = unknown> extends UpdatableItem {
+    public type: string = 'Select';
     public states: Array<TValue>;
     public id: string;
 

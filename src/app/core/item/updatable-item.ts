@@ -3,6 +3,7 @@ import { IItem } from './Item';
 
 export abstract class UpdatableItem implements IItem {
     public abstract id: string;
+    public abstract type: string;
     public onUpdate: Observable<this>;
 
     private _onUpdateEvent: Subject<this> = new Subject();

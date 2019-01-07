@@ -1,6 +1,7 @@
 import { UpdatableItem } from './updatable-item';
 
 export class Activable extends UpdatableItem {
+    public type: string = 'Activable';
     public get isActive(): boolean {
         return this._isActive
     }

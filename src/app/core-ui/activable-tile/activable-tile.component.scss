@@ -5,9 +5,12 @@
     img {
         width: 100%;
         height: 100%;
+        image-rendering: pixelated;
+        image-rendering: -moz-crisp-edges;
+        image-rendering: crisp-edges;
     }
     
     .notFound {
-        filter: grayscale(100%);
+        filter: brightness(50%) grayscale(100%);
     }
 }

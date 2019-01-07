@@ -16,14 +16,17 @@ import { SingleplayerComponent } from './singleplayer/singleplayer.component';
 import { MultiplayerService } from './multiplayer/service/multiplayer';
 import { HardcodedMultiplayerService } from './multiplayer/service/hardcoded-multiplayer';
 import { JsonMultiplayerService } from './multiplayer/service/json-multiplayer';
+import { ILayoutFetcher } from '../core-ui/layout/fetcher/layout-fetcher';
+import { JsonLayoutFetcher } from '../core-ui/layout/fetcher/json-layout';
+import { TimerComponent } from './timer/timer.component';
 
 @NgModule({
-  declarations: [DungeonTileComponent, StandardComponent, MultiplayerComponent, SingleplayerComponent],
+  declarations: [TimerComponent, DungeonTileComponent, StandardComponent, MultiplayerComponent, SingleplayerComponent],
   imports: [
     CommonModule,
     CoreUiModule
   ],
-  exports: [DungeonTileComponent, SingleplayerComponent, MultiplayerComponent],
+  exports: [TimerComponent, DungeonTileComponent, SingleplayerComponent, MultiplayerComponent],
   providers: [
     {
       provide: IConfigurationFetcher,
@@ -32,6 +35,12 @@ import { JsonMultiplayerService } from './multiplayer/service/json-multiplayer';
         fetcher.addParser(new DungeonTileParser());
 
         return fetcher;
+      }
+    },
+    {
+      provide: ILayoutFetcher,
+      useFactory: () => {
+        return new JsonLayoutFetcher('./assets/configuration/example.layout.json');
       }
     },
     {

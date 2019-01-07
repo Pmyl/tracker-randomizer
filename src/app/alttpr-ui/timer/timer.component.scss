@@ -1,0 +1,13 @@
+@font-face {
+    font-family: digital;
+    src: url(digital2.ttf);
+}
+
+:host {
+    display: block;
+    margin-bottom: 5px;
+    font-family: digital;
+    text-align: center;
+    font-size: 32px;
+    color: white;
+}

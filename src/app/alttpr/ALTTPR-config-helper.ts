@@ -8,10 +8,10 @@ export class ALTTPConfigHelper {
     public static createDungeonRewardSelect(dungeonId: Dungeon): Select {
         return new Select(Utils.dungeonRewardId(dungeonId), [
             DungeonReward.Unknown,
-            DungeonReward.Pendant,
-            DungeonReward.GreenPendant,
             DungeonReward.Crystal,
-            DungeonReward.RedCrystal
+            DungeonReward.RedCrystal,
+            DungeonReward.Pendant,
+            DungeonReward.GreenPendant
         ]);
     }
 
