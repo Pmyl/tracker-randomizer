@@ -1,12 +1,15 @@
-<activable-tile
-  *ngSwitchCase="'Activable'"
-  class="item"
-  [item]="item"></activable-tile>
-<select-tile
-  *ngSwitchCase="'Select'"
-  class="item"
-  [item]="item"></select-tile>
-<dungeon-tile
-  *ngSwitchCase="'Dungeon'"
-  class="item"
-  [item]="item"></dungeon-tile>
+<ng-container
+  [ngSwitch]="item.type">
+  <activable-tile
+    *ngSwitchCase="'Activable'"
+    class="item"
+    [item]="item"></activable-tile>
+  <select-tile
+    *ngSwitchCase="'Select'"
+    class="item"
+    [item]="item"></select-tile>
+  <dungeon-tile
+    *ngSwitchCase="'Dungeon'"
+    class="item"
+    [item]="item"></dungeon-tile>
+</ng-container>

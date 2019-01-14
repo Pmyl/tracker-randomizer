@@ -21,8 +21,10 @@
 		"Item_BugNet",
 		"Item_MudoraBook",
 		"Item_Bottles",
-		"Item_CaneSomaria",
-		"Item_CaneByrna",
+		{
+			"type": "Twin",
+			"items": ["Item_CaneSomaria", "Item_CaneByrna"]
+		},
 		"Item_Cape",
 		"Item_Mirror",
 		"Item_Boots",
