@@ -2,17 +2,13 @@
   <ng-container
     *ngFor="let tile of tiles"
     [ngSwitch]="tile.type">
-    <activable-tile
-      *ngSwitchCase="'Activable'"
+    <layout-tile-item
+      *ngSwitchCase="TileType.Item"
       class="tile"
-      [item]="tile"></activable-tile>
-    <select-tile
-      *ngSwitchCase="'Select'"
+      [item]="tile.item"></layout-tile-item>
+    <layout-tile-twin
+      *ngSwitchCase="TileType.twin"
       class="tile"
-      [item]="tile"></select-tile>
-    <dungeon-tile
-      *ngSwitchCase="'Dungeon'"
-      class="tile"
-      [item]="tile"></dungeon-tile>
+      [item]="tile.items"></layout-tile-twin>
   </ng-container>
 </ng-container>

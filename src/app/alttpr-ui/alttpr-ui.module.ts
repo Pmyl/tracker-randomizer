@@ -19,14 +19,28 @@ import { JsonMultiplayerService } from './multiplayer/service/json-multiplayer';
 import { ILayoutFetcher } from '../core-ui/layout/fetcher/layout-fetcher';
 import { JsonLayoutFetcher } from '../core-ui/layout/fetcher/json-layout';
 import { TimerComponent } from './timer/timer.component';
+import { LayoutTileItemComponent } from './layout-tile-item/layout-tile-item.component';
+import { LayoutTileTwinComponent } from './layout-tile-twin/layout-tile-twin.component';
 
 @NgModule({
-  declarations: [TimerComponent, DungeonTileComponent, StandardComponent, MultiplayerComponent, SingleplayerComponent],
+  declarations: [
+    TimerComponent,
+    DungeonTileComponent,
+    StandardComponent,
+    MultiplayerComponent,
+    SingleplayerComponent,
+    LayoutTileItemComponent,
+    LayoutTileTwinComponent
+  ],
   imports: [
     CommonModule,
     CoreUiModule
   ],
-  exports: [TimerComponent, DungeonTileComponent, SingleplayerComponent, MultiplayerComponent],
+  exports: [TimerComponent,
+    DungeonTileComponent,
+    SingleplayerComponent,
+    MultiplayerComponent
+  ],
   providers: [
     {
       provide: IConfigurationFetcher,

@@ -1,0 +1,12 @@
+.container {
+    display: flex;
+
+    .subtile {
+        width: 16px;
+        height: 32px;
+        max-width: 16px;
+        max-height: 32px;
+        overflow: hidden;
+        display: block;
+    }
+}
