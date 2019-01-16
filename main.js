@@ -52,6 +52,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _core_ui_layout_fetcher_layout_fetcher__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../core-ui/layout/fetcher/layout-fetcher */ "./src/app/core-ui/layout/fetcher/layout-fetcher.ts");
 /* harmony import */ var _core_ui_layout_fetcher_json_layout__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../core-ui/layout/fetcher/json-layout */ "./src/app/core-ui/layout/fetcher/json-layout.ts");
 /* harmony import */ var _timer_timer_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./timer/timer.component */ "./src/app/alttpr-ui/timer/timer.component.ts");
+/* harmony import */ var _layout_tile_item_layout_tile_item_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./layout-tile-item/layout-tile-item.component */ "./src/app/alttpr-ui/layout-tile-item/layout-tile-item.component.ts");
+/* harmony import */ var _layout_tile_twin_layout_tile_twin_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./layout-tile-twin/layout-tile-twin.component */ "./src/app/alttpr-ui/layout-tile-twin/layout-tile-twin.component.ts");
+
+
 
 
 
@@ -77,12 +81,24 @@ var AlttprUiModule = /** @class */ (function () {
     }
     AlttprUiModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-            declarations: [_timer_timer_component__WEBPACK_IMPORTED_MODULE_18__["TimerComponent"], _dungeon_tile_dungeon_tile_component__WEBPACK_IMPORTED_MODULE_3__["DungeonTileComponent"], _standard_standard_component__WEBPACK_IMPORTED_MODULE_4__["StandardComponent"], _multiplayer_multiplayer_component__WEBPACK_IMPORTED_MODULE_12__["MultiplayerComponent"], _singleplayer_singleplayer_component__WEBPACK_IMPORTED_MODULE_13__["SingleplayerComponent"]],
+            declarations: [
+                _timer_timer_component__WEBPACK_IMPORTED_MODULE_18__["TimerComponent"],
+                _dungeon_tile_dungeon_tile_component__WEBPACK_IMPORTED_MODULE_3__["DungeonTileComponent"],
+                _standard_standard_component__WEBPACK_IMPORTED_MODULE_4__["StandardComponent"],
+                _multiplayer_multiplayer_component__WEBPACK_IMPORTED_MODULE_12__["MultiplayerComponent"],
+                _singleplayer_singleplayer_component__WEBPACK_IMPORTED_MODULE_13__["SingleplayerComponent"],
+                _layout_tile_item_layout_tile_item_component__WEBPACK_IMPORTED_MODULE_19__["LayoutTileItemComponent"],
+                _layout_tile_twin_layout_tile_twin_component__WEBPACK_IMPORTED_MODULE_20__["LayoutTileTwinComponent"]
+            ],
             imports: [
                 _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
                 _core_ui_core_ui_module__WEBPACK_IMPORTED_MODULE_5__["CoreUiModule"]
             ],
-            exports: [_timer_timer_component__WEBPACK_IMPORTED_MODULE_18__["TimerComponent"], _dungeon_tile_dungeon_tile_component__WEBPACK_IMPORTED_MODULE_3__["DungeonTileComponent"], _singleplayer_singleplayer_component__WEBPACK_IMPORTED_MODULE_13__["SingleplayerComponent"], _multiplayer_multiplayer_component__WEBPACK_IMPORTED_MODULE_12__["MultiplayerComponent"]],
+            exports: [_timer_timer_component__WEBPACK_IMPORTED_MODULE_18__["TimerComponent"],
+                _dungeon_tile_dungeon_tile_component__WEBPACK_IMPORTED_MODULE_3__["DungeonTileComponent"],
+                _singleplayer_singleplayer_component__WEBPACK_IMPORTED_MODULE_13__["SingleplayerComponent"],
+                _multiplayer_multiplayer_component__WEBPACK_IMPORTED_MODULE_12__["MultiplayerComponent"]
+            ],
             providers: [
                 {
                     provide: _configuration_base_configuration_fetcher__WEBPACK_IMPORTED_MODULE_6__["IConfigurationFetcher"],
@@ -140,7 +156,7 @@ module.exports = "<div class=\"imageContainer\">\r\n  <activable-tile\r\n    cla
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".imageContainer {\n  width: 100%;\n  height: 100%;\n  text-align: center;\n  position: relative; }\n  .imageContainer .notFound,\n  .imageContainer .unknown {\n    -webkit-filter: grayscale(100%);\n            filter: grayscale(100%); }\n  .imageContainer .reward {\n    z-index: 10;\n    position: absolute;\n    bottom: 7px;\n    left: 0;\n    width: 16px;\n    height: 16px; }\n  .imageContainer .block {\n    z-index: 10;\n    position: absolute;\n    bottom: 7px;\n    right: 0;\n    width: 16px;\n    height: 16px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYWx0dHByLXVpL2R1bmdlb24tdGlsZS9EOlxcUHJvamVjdHNcXFRyYWNrZXJBTFRUUFIvc3JjXFxhcHBcXGFsdHRwci11aVxcZHVuZ2Vvbi10aWxlXFxkdW5nZW9uLXRpbGUuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxZQUFXO0VBQ1gsYUFBWTtFQUNaLG1CQUFrQjtFQUNsQixtQkFBa0IsRUF3QnJCO0VBNUJEOztJQVFRLGdDQUF1QjtZQUF2Qix3QkFBdUIsRUFDMUI7RUFUTDtJQVlRLFlBQVc7SUFDWCxtQkFBa0I7SUFDbEIsWUFBVztJQUNYLFFBQU87SUFDUCxZQUFXO0lBQ1gsYUFBWSxFQUNmO0VBbEJMO0lBcUJRLFlBQVc7SUFDWCxtQkFBa0I7SUFDbEIsWUFBVztJQUNYLFNBQVE7SUFDUixZQUFXO0lBQ1gsYUFBWSxFQUNmIiwiZmlsZSI6InNyYy9hcHAvYWx0dHByLXVpL2R1bmdlb24tdGlsZS9kdW5nZW9uLXRpbGUuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuaW1hZ2VDb250YWluZXIge1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBoZWlnaHQ6IDEwMCU7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcblxyXG4gICAgLm5vdEZvdW5kLFxyXG4gICAgLnVua25vd24ge1xyXG4gICAgICAgIGZpbHRlcjogZ3JheXNjYWxlKDEwMCUpO1xyXG4gICAgfVxyXG5cclxuICAgIC5yZXdhcmQge1xyXG4gICAgICAgIHotaW5kZXg6IDEwO1xyXG4gICAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgICAgICBib3R0b206IDdweDtcclxuICAgICAgICBsZWZ0OiAwO1xyXG4gICAgICAgIHdpZHRoOiAxNnB4O1xyXG4gICAgICAgIGhlaWdodDogMTZweDtcclxuICAgIH1cclxuXHJcbiAgICAuYmxvY2sge1xyXG4gICAgICAgIHotaW5kZXg6IDEwO1xyXG4gICAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgICAgICBib3R0b206IDdweDtcclxuICAgICAgICByaWdodDogMDtcclxuICAgICAgICB3aWR0aDogMTZweDtcclxuICAgICAgICBoZWlnaHQ6IDE2cHg7XHJcbiAgICB9XHJcbn0iXX0= */"
+module.exports = ".imageContainer {\n  width: 100%;\n  height: 100%;\n  text-align: center;\n  position: relative; }\n  .imageContainer .notFound,\n  .imageContainer .unknown {\n    -webkit-filter: grayscale(100%);\n            filter: grayscale(100%); }\n  .imageContainer .reward {\n    z-index: 10;\n    position: absolute;\n    bottom: 11px;\n    left: 0;\n    width: 16px;\n    height: 16px; }\n  .imageContainer .block {\n    z-index: 10;\n    position: absolute;\n    bottom: 11px;\n    right: 0;\n    width: 16px;\n    height: 16px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYWx0dHByLXVpL2R1bmdlb24tdGlsZS9EOlxcUHJvamVjdHNcXFRyYWNrZXJBTFRUUFIvc3JjXFxhcHBcXGFsdHRwci11aVxcZHVuZ2Vvbi10aWxlXFxkdW5nZW9uLXRpbGUuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxZQUFXO0VBQ1gsYUFBWTtFQUNaLG1CQUFrQjtFQUNsQixtQkFBa0IsRUF3QnJCO0VBNUJEOztJQVFRLGdDQUF1QjtZQUF2Qix3QkFBdUIsRUFDMUI7RUFUTDtJQVlRLFlBQVc7SUFDWCxtQkFBa0I7SUFDbEIsYUFBWTtJQUNaLFFBQU87SUFDUCxZQUFXO0lBQ1gsYUFBWSxFQUNmO0VBbEJMO0lBcUJRLFlBQVc7SUFDWCxtQkFBa0I7SUFDbEIsYUFBWTtJQUNaLFNBQVE7SUFDUixZQUFXO0lBQ1gsYUFBWSxFQUNmIiwiZmlsZSI6InNyYy9hcHAvYWx0dHByLXVpL2R1bmdlb24tdGlsZS9kdW5nZW9uLXRpbGUuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuaW1hZ2VDb250YWluZXIge1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBoZWlnaHQ6IDEwMCU7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcblxyXG4gICAgLm5vdEZvdW5kLFxyXG4gICAgLnVua25vd24ge1xyXG4gICAgICAgIGZpbHRlcjogZ3JheXNjYWxlKDEwMCUpO1xyXG4gICAgfVxyXG5cclxuICAgIC5yZXdhcmQge1xyXG4gICAgICAgIHotaW5kZXg6IDEwO1xyXG4gICAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgICAgICBib3R0b206IDExcHg7XHJcbiAgICAgICAgbGVmdDogMDtcclxuICAgICAgICB3aWR0aDogMTZweDtcclxuICAgICAgICBoZWlnaHQ6IDE2cHg7XHJcbiAgICB9XHJcblxyXG4gICAgLmJsb2NrIHtcclxuICAgICAgICB6LWluZGV4OiAxMDtcclxuICAgICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICAgICAgYm90dG9tOiAxMXB4O1xyXG4gICAgICAgIHJpZ2h0OiAwO1xyXG4gICAgICAgIHdpZHRoOiAxNnB4O1xyXG4gICAgICAgIGhlaWdodDogMTZweDtcclxuICAgIH1cclxufSJdfQ== */"
 
 /***/ }),
 
@@ -253,6 +269,120 @@ var JsonImages = /** @class */ (function () {
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_core_ui_image_repository_image_repository__WEBPACK_IMPORTED_MODULE_1__["ImageRepository"], String])
     ], JsonImages);
     return JsonImages;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/alttpr-ui/layout-tile-item/layout-tile-item.component.html":
+/*!****************************************************************************!*\
+  !*** ./src/app/alttpr-ui/layout-tile-item/layout-tile-item.component.html ***!
+  \****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<ng-container\r\n  [ngSwitch]=\"item.type\">\r\n  <activable-tile\r\n    *ngSwitchCase=\"'Activable'\"\r\n    class=\"item\"\r\n    [item]=\"item\"></activable-tile>\r\n  <select-tile\r\n    *ngSwitchCase=\"'Select'\"\r\n    class=\"item\"\r\n    [item]=\"item\"></select-tile>\r\n  <dungeon-tile\r\n    *ngSwitchCase=\"'Dungeon'\"\r\n    class=\"item\"\r\n    [item]=\"item\"></dungeon-tile>\r\n</ng-container>"
+
+/***/ }),
+
+/***/ "./src/app/alttpr-ui/layout-tile-item/layout-tile-item.component.scss":
+/*!****************************************************************************!*\
+  !*** ./src/app/alttpr-ui/layout-tile-item/layout-tile-item.component.scss ***!
+  \****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".item {\n  display: block; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYWx0dHByLXVpL2xheW91dC10aWxlLWl0ZW0vRDpcXFByb2plY3RzXFxUcmFja2VyQUxUVFBSL3NyY1xcYXBwXFxhbHR0cHItdWlcXGxheW91dC10aWxlLWl0ZW1cXGxheW91dC10aWxlLWl0ZW0uY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxlQUFjLEVBQ2pCIiwiZmlsZSI6InNyYy9hcHAvYWx0dHByLXVpL2xheW91dC10aWxlLWl0ZW0vbGF5b3V0LXRpbGUtaXRlbS5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5pdGVtIHtcclxuICAgIGRpc3BsYXk6IGJsb2NrO1xyXG59Il19 */"
+
+/***/ }),
+
+/***/ "./src/app/alttpr-ui/layout-tile-item/layout-tile-item.component.ts":
+/*!**************************************************************************!*\
+  !*** ./src/app/alttpr-ui/layout-tile-item/layout-tile-item.component.ts ***!
+  \**************************************************************************/
+/*! exports provided: LayoutTileItemComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LayoutTileItemComponent", function() { return LayoutTileItemComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var LayoutTileItemComponent = /** @class */ (function () {
+    function LayoutTileItemComponent() {
+    }
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+    ], LayoutTileItemComponent.prototype, "item", void 0);
+    LayoutTileItemComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'layout-tile-item',
+            template: __webpack_require__(/*! ./layout-tile-item.component.html */ "./src/app/alttpr-ui/layout-tile-item/layout-tile-item.component.html"),
+            styles: [__webpack_require__(/*! ./layout-tile-item.component.scss */ "./src/app/alttpr-ui/layout-tile-item/layout-tile-item.component.scss")]
+        })
+    ], LayoutTileItemComponent);
+    return LayoutTileItemComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/alttpr-ui/layout-tile-twin/layout-tile-twin.component.html":
+/*!****************************************************************************!*\
+  !*** ./src/app/alttpr-ui/layout-tile-twin/layout-tile-twin.component.html ***!
+  \****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container\">\r\n  <div class=\"subtile-container left\">\r\n    <layout-tile-item class=\"subtile\" [item]=\"items[0]\"></layout-tile-item>\r\n  </div>\r\n  <div class=\"subtile-container right\">\r\n    <layout-tile-item class=\"subtile\" [item]=\"items[1]\"></layout-tile-item>\r\n  </div>\r\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/alttpr-ui/layout-tile-twin/layout-tile-twin.component.scss":
+/*!****************************************************************************!*\
+  !*** ./src/app/alttpr-ui/layout-tile-twin/layout-tile-twin.component.scss ***!
+  \****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".container {\n  display: flex; }\n  .container .subtile {\n    position: absolute;\n    width: 32px;\n    height: 32px;\n    max-width: 32px;\n    max-height: 32px;\n    overflow: hidden;\n    display: block;\n    top: -100%;\n    bottom: -100%;\n    left: -100%;\n    right: -100%;\n    margin: auto; }\n  .container .subtile-container {\n    position: relative;\n    width: 16px;\n    height: 32px;\n    max-width: 16px;\n    max-height: 32px;\n    overflow: hidden; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYWx0dHByLXVpL2xheW91dC10aWxlLXR3aW4vRDpcXFByb2plY3RzXFxUcmFja2VyQUxUVFBSL3NyY1xcYXBwXFxhbHR0cHItdWlcXGxheW91dC10aWxlLXR3aW5cXGxheW91dC10aWxlLXR3aW4uY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBR0E7RUFDSSxjQUFhLEVBaUNoQjtFQWxDRDtJQUlRLG1CQUFrQjtJQUNsQixZQVJJO0lBU0osYUFSSztJQVNMLGdCQVZJO0lBV0osaUJBVks7SUFXTCxpQkFBZ0I7SUFDaEIsZUFBYztJQUNkLFdBQVU7SUFDVixjQUFhO0lBQ2IsWUFBVztJQUNYLGFBQVk7SUFDWixhQUFZLEVBQ2Y7RUFoQkw7SUFtQlEsbUJBQWtCO0lBQ2xCLFlBQWlCO0lBQ2pCLGFBdkJLO0lBd0JMLGdCQUFxQjtJQUNyQixpQkF6Qks7SUEwQkwsaUJBQWdCLEVBQ25CIiwiZmlsZSI6InNyYy9hcHAvYWx0dHByLXVpL2xheW91dC10aWxlLXR3aW4vbGF5b3V0LXRpbGUtdHdpbi5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIiR3aWR0aDogMzJweDtcclxuJGhlaWdodDogMzJweDtcclxuXHJcbi5jb250YWluZXIge1xyXG4gICAgZGlzcGxheTogZmxleDtcclxuXHJcbiAgICAuc3VidGlsZSB7XHJcbiAgICAgICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgICAgIHdpZHRoOiAkd2lkdGg7XHJcbiAgICAgICAgaGVpZ2h0OiAkaGVpZ2h0O1xyXG4gICAgICAgIG1heC13aWR0aDogJHdpZHRoO1xyXG4gICAgICAgIG1heC1oZWlnaHQ6ICRoZWlnaHQ7XHJcbiAgICAgICAgb3ZlcmZsb3c6IGhpZGRlbjtcclxuICAgICAgICBkaXNwbGF5OiBibG9jaztcclxuICAgICAgICB0b3A6IC0xMDAlO1xyXG4gICAgICAgIGJvdHRvbTogLTEwMCU7XHJcbiAgICAgICAgbGVmdDogLTEwMCU7XHJcbiAgICAgICAgcmlnaHQ6IC0xMDAlO1xyXG4gICAgICAgIG1hcmdpbjogYXV0bztcclxuICAgIH1cclxuXHJcbiAgICAuc3VidGlsZS1jb250YWluZXIge1xyXG4gICAgICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICAgICAgICB3aWR0aDogJHdpZHRoIC8gMjtcclxuICAgICAgICBoZWlnaHQ6ICRoZWlnaHQ7XHJcbiAgICAgICAgbWF4LXdpZHRoOiAkd2lkdGggLyAyO1xyXG4gICAgICAgIG1heC1oZWlnaHQ6ICRoZWlnaHQ7XHJcbiAgICAgICAgb3ZlcmZsb3c6IGhpZGRlbjtcclxuICAgIH1cclxuXHJcbiAgICAubGVmdCB7XHJcbiAgICAgICAgLy8gbGVmdDogLTE2cHg7XHJcbiAgICB9XHJcblxyXG4gICAgLnJpZ2h0IHtcclxuICAgICAgICAvLyBsZWZ0OiAxNnB4O1xyXG4gICAgfVxyXG59Il19 */"
+
+/***/ }),
+
+/***/ "./src/app/alttpr-ui/layout-tile-twin/layout-tile-twin.component.ts":
+/*!**************************************************************************!*\
+  !*** ./src/app/alttpr-ui/layout-tile-twin/layout-tile-twin.component.ts ***!
+  \**************************************************************************/
+/*! exports provided: LayoutTileTwinComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LayoutTileTwinComponent", function() { return LayoutTileTwinComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var LayoutTileTwinComponent = /** @class */ (function () {
+    function LayoutTileTwinComponent() {
+    }
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Array)
+    ], LayoutTileTwinComponent.prototype, "items", void 0);
+    LayoutTileTwinComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'layout-tile-twin',
+            template: __webpack_require__(/*! ./layout-tile-twin.component.html */ "./src/app/alttpr-ui/layout-tile-twin/layout-tile-twin.component.html"),
+            styles: [__webpack_require__(/*! ./layout-tile-twin.component.scss */ "./src/app/alttpr-ui/layout-tile-twin/layout-tile-twin.component.scss")]
+        })
+    ], LayoutTileTwinComponent);
+    return LayoutTileTwinComponent;
 }());
 
 
@@ -557,7 +687,7 @@ var SingleplayerComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ng-container *ngIf=\"isReady\">\r\n  <ng-container\r\n    *ngFor=\"let tile of tiles\"\r\n    [ngSwitch]=\"tile.type\">\r\n    <activable-tile\r\n      *ngSwitchCase=\"'Activable'\"\r\n      class=\"tile\"\r\n      [item]=\"tile\"></activable-tile>\r\n    <select-tile\r\n      *ngSwitchCase=\"'Select'\"\r\n      class=\"tile\"\r\n      [item]=\"tile\"></select-tile>\r\n    <dungeon-tile\r\n      *ngSwitchCase=\"'Dungeon'\"\r\n      class=\"tile\"\r\n      [item]=\"tile\"></dungeon-tile>\r\n  </ng-container>\r\n</ng-container>"
+module.exports = "<ng-container *ngIf=\"isReady\">\r\n  <ng-container\r\n    *ngFor=\"let tile of tiles\"\r\n    [ngSwitch]=\"tile.type\">\r\n    <layout-tile-item\r\n      *ngSwitchCase=\"TileType.Item\"\r\n      class=\"tile\"\r\n      [item]=\"tile.item\"></layout-tile-item>\r\n    <layout-tile-twin\r\n      *ngSwitchCase=\"TileType.Twin\"\r\n      class=\"tile\"\r\n      [items]=\"tile.items\"></layout-tile-twin>\r\n  </ng-container>\r\n</ng-container>"
 
 /***/ }),
 
@@ -585,12 +715,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var src_app_core_ui_layout_fetcher_layout_fetcher__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/core-ui/layout/fetcher/layout-fetcher */ "./src/app/core-ui/layout/fetcher/layout-fetcher.ts");
+/* harmony import */ var src_app_core_ui_layout_layout__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/core-ui/layout/layout */ "./src/app/core-ui/layout/layout.ts");
+/* harmony import */ var util__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! util */ "./node_modules/util/util.js");
+/* harmony import */ var util__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(util__WEBPACK_IMPORTED_MODULE_4__);
+
+
 
 
 
 var StandardComponent = /** @class */ (function () {
     function StandardComponent(layoutFetcher) {
         this.isReady = false;
+        this.TileType = src_app_core_ui_layout_layout__WEBPACK_IMPORTED_MODULE_3__["TileType"];
         this._layoutFetcher = layoutFetcher;
     }
     StandardComponent.prototype.ngOnChanges = function () {
@@ -605,14 +741,40 @@ var StandardComponent = /** @class */ (function () {
                     case 1:
                         _a._layout = _b.sent();
                         this.tiles = [];
-                        this._layout.tilesOrder.forEach(function (tileId) {
-                            _this.tiles.push(_this.config.getItem(tileId));
+                        this._layout.tilesOrder.forEach(function (tileConfig) {
+                            if (_this._isConfig(tileConfig)) {
+                                _this.tiles.push(_this._rawToTile(tileConfig));
+                            }
+                            else {
+                                _this.tiles.push({
+                                    item: _this.config.getItem(tileConfig),
+                                    type: src_app_core_ui_layout_layout__WEBPACK_IMPORTED_MODULE_3__["TileType"].Item
+                                });
+                            }
                         });
                         this.isReady = true;
                         return [2 /*return*/];
                 }
             });
         });
+    };
+    StandardComponent.prototype._isConfig = function (tileConfig) {
+        return Object(util__WEBPACK_IMPORTED_MODULE_4__["isObject"])(tileConfig);
+    };
+    StandardComponent.prototype._rawToTile = function (tile) {
+        var _this = this;
+        switch (tile.type) {
+            case src_app_core_ui_layout_layout__WEBPACK_IMPORTED_MODULE_3__["TileType"].Item:
+                return {
+                    item: this.config.getItem(tile.item),
+                    type: src_app_core_ui_layout_layout__WEBPACK_IMPORTED_MODULE_3__["TileType"].Item
+                };
+            case src_app_core_ui_layout_layout__WEBPACK_IMPORTED_MODULE_3__["TileType"].Twin:
+                return {
+                    items: tile.items.map(function (x) { return _this.config.getItem(x); }),
+                    type: src_app_core_ui_layout_layout__WEBPACK_IMPORTED_MODULE_3__["TileType"].Twin
+                };
+        }
     };
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
@@ -1444,6 +1606,25 @@ var ILayoutFetcher = /** @class */ (function () {
     return ILayoutFetcher;
 }());
 
+
+
+/***/ }),
+
+/***/ "./src/app/core-ui/layout/layout.ts":
+/*!******************************************!*\
+  !*** ./src/app/core-ui/layout/layout.ts ***!
+  \******************************************/
+/*! exports provided: TileType */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TileType", function() { return TileType; });
+var TileType;
+(function (TileType) {
+    TileType["Item"] = "Item";
+    TileType["Twin"] = "Twin";
+})(TileType || (TileType = {}));
 
 
 /***/ }),

@@ -89,6 +89,7 @@
         { "type": "Activable", "id": "Item_Lantern" },
         { "type": "Activable", "id": "Item_Hammer" },
         { "type": "Activable", "id": "Item_Flute" },
+        { "type": "Activable", "id": "Item_Shovel" },
         { "type": "Activable", "id": "Item_BugNet" },
         { "type": "Activable", "id": "Item_MudoraBook" },
         {

@@ -10,19 +10,25 @@
 		"Item_SilverArrow",
 		"Item_Mushroom",
 		"Item_MagicPowder",
-		"Item_IceRod",
-		"Item_FireRod",
+		{
+			"type": "Twin",
+			"items": [
+				"Item_IceRod",
+				"Item_FireRod"
+			]
+		},
 		"Item_Medallion_Bombos",
 		"Item_Medallion_Ether",
 		"Item_Medallion_Quake",
 		"Item_Lantern",
 		"Item_Hammer",
 		"Item_Flute",
+		"Item_Shovel",
 		"Item_BugNet",
 		"Item_MudoraBook",
 		"Item_Bottles",
-		"Item_CaneSomaria",
 		"Item_CaneByrna",
+		"Item_CaneSomaria",
 		"Item_Cape",
 		"Item_Mirror",
 		"Item_Boots",
